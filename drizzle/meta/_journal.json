@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1737931670527,
+      "tag": "20250126224750_old_lyja",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1738277663245,
+      "tag": "20250130225423_dashing_jetstream",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738287533065,
+      "tag": "20250131013853_premium_cammi",
+      "breakpoints": true
+    }
+  ]
+}
