@@ -2,13 +2,11 @@
 import { NextResponse, type NextRequest } from "next/server";
 // import type { Session } from "@/lib/auth";
 import { generateToken } from "./lib/deviceId";
-import getAdmin from "./db-access/session";
 // import getAdmin from "./db-access/session";
 
-const publicRoutes = ["", "join", "game"];
+const publicRoutes = ["", "join", "game", "learn-more", "citations"];
 const authRoutes = ["/auth"];
 const passwordRoutes = ["/reset-password", "/forgot-password"];
-const adminRoutes = ["/admin"];
 
 const attachDeviceId = (request: NextRequest, response: NextResponse): NextResponse => {
     const deviceId = request.cookies.get("deviceId");
@@ -32,7 +30,6 @@ export default async function authMiddleware(request: NextRequest) {
     const isPublicRoute = publicRoutes.includes(pathName) || publicRoutes.includes(pathRoot);
     const isAuthRoute = authRoutes.includes(pathName);
     const isPasswordRoute = passwordRoutes.includes(pathName);
-    const isAdminRoute = adminRoutes.includes(pathName);
 
     const response = attachDeviceId(request, NextResponse.next());
 

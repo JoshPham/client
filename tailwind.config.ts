@@ -64,9 +64,16 @@ export default {
         '66%': { content: '"..."' },
         '100%': { content: '"."' }
       },
+	  bounce: {
+		'0%, 100%': {
+			transform: 'translateY(-100%)',
+			animationTimingFunction: 'cubic-bezier(0.8,0,1,1)'
+		},
+	  }
     },
     animation: {
       loadingDots: 'loadingDots 1.5s steps(3, end) infinite',
+		bounce: 'bounce 1s infinite'
     },
   },
   plugins: [require('tailwindcss-motion'), require("tailwindcss-animate")], 

@@ -21,7 +21,7 @@ export async function hasSwearWords(text: string) {
   // const data = await response.json(); 
 
   // return data;
-  return { has_profanity: false };
+  return { has_profanity: false, text: text };
 }
 
 

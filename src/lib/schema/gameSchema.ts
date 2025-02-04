@@ -15,9 +15,10 @@ export const gameTable = pgTable("game", {
 export const playerSessionTable = pgTable("player_session", {
     id: serial("id").primaryKey(),
     gameId: text("gameId"),
-    deviceId: text("deviceId"),
-    score: integer("score"),
-    name: text("name"),
+    deviceId: text("deviceId").notNull(),
+    score: integer("score").notNull(),
+    name: text("name"),     
 });
 
 export type Game = typeof gameTable.$inferSelect;
+export type PlayerSession = typeof playerSessionTable.$inferSelect;

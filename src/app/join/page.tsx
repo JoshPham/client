@@ -1,13 +1,9 @@
 "use client"
 
 import { FormError } from "@/components/form-error";
-import { FormSuccess } from "@/components/form-success";
-import { Button } from "@/components/ui/button";
-import { FormControl, FormField, FormItem, FormLabel, FormMessage, Form } from "@/components/ui/form";
+import { FormControl, FormField, FormItem, FormMessage, Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input"
-import { getGameByCode } from "@/db-access/game";
 import { codeSchema } from "@/lib/schema/formSchemas";
-import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { redirect } from "next/navigation";
 import { startTransition, useState } from "react";
@@ -76,6 +72,7 @@ export default function JoinPage() {
                                             type="text"
                                             value={field.value || ""}
                                             className="bg-[#1E293B] text-white font-bold text-4xl text-center pt-1 pb-4"
+                                            autoComplete="off"
                                         />
                                     </FormControl>
                                     <FormMessage />

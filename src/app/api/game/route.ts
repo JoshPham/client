@@ -16,7 +16,7 @@ export async function GET(request: Request) {
         return NextResponse.json(game);
     } catch (error) {
         return NextResponse.json(
-        { error: "Failed to fetch game" },
+        { error: `Failed to fetch game ${error}` },
         { status: 500 }
         );
     }

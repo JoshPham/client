@@ -70,3 +70,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.hanging{
+  padding-left: 4rem;
+}
+
+.hanging::first-letter{
+  margin-left: -4rem;
+}
