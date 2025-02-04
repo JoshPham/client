@@ -118,7 +118,7 @@ export function AdminClient({
         return () => {
             socket.disconnect();
         };
-    }, []);
+    });
 
     const addPerson = () => {
         setPeople((people) => {

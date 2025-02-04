@@ -196,12 +196,12 @@ export default function GamePage({
     }
 
     const chooseAnswer = (question: QuestionProps, answer: string) => {
-        if (answer === question.correct_answer) {
+        if (answer === question.correct_answer && session) {
             socket?.emit("addPoints", session!.deviceId!, (session!.score || 0), item!.price, item!.name, session!.name);
             
             setCorrect(true);
             setIsSubFading(true);
-            // playerSession.score = (playerSession.score || 0) + item!.price;
+            session.score = (session.score || 0) + item!.price;
             setTimeout(() => {
                 setShowCorrect(true);
                 setIsSubFading(false);

@@ -133,7 +133,7 @@ export default function LearnMorePage() {
                     <div className="flex justify-center w-full">
                         <Card className="p-4 w-full max-w-md mx-auto">
                             <h2 className="text-xl font-bold text-center mb-4 text-white">
-                                People's Important Goals in 1967
+                                People&apos;s Important Goals in 1967
                             </h2>
                             <CardContent className="flex justify-center">
                                 <Pie data={data1} className="text-white "/>
@@ -149,7 +149,7 @@ export default function LearnMorePage() {
                         >
                             <Card className="p-4 w-full h-full max-w-md mx-auto">
                                 <h2 className="text-xl font-bold text-center mb-4 text-white">
-                                    People's Important Goals in 1967
+                                    People&apos;s Important Goals in 1967
                                 </h2>
                                 <CardContent className="flex justify-center">
                                     <Pie data={data2} className="text-white "/>
@@ -206,7 +206,7 @@ export default function LearnMorePage() {
                                 href="/citations"
                                 className="flex flex-row gap-x-2 text-4xl text-[#00C853] font-bold underline hover:no-underline"
                             >
-                                ("Consumerism")
+                                (&quot;Consumerism&quot;)
                             </Link>
                         </motion.div>
                     </div>
@@ -237,7 +237,7 @@ export default function LearnMorePage() {
                                 href="/citations"
                                 className="flex flex-row gap-x-2 text-4xl text-[#F57F17] font-bold underline hover:no-underline"
                             >
-                                ("Dr. Spock's Last Interview.")
+                                (&quot;Dr. Spock&apos;s Last Interview.&quot;)
                             </Link>
                         </motion.div>
                     </div>
