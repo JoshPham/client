@@ -250,14 +250,24 @@ export default function GamePage({
 
     if (showGame && session) {
         return (
-            <div className={`flex flex-col p-10 gap-y-4 justify-start ${isFading ? "motion-opacity-out-[0%]" : "motion-opacity-in-[0%]"} motion-duration-300`}>
+            <div className={`flex flex-col md:p-10 w-full h-full gap-y-4 justify-start ${isFading ? "motion-opacity-out-[0%]" : "motion-opacity-in-[0%]"} motion-duration-300`}>
                 <div className="flex flex-col gap-7">
-                    <div className="text-5xl flex justify-between">
-                        <h1 className="text-[#FFDE03] font-bold motion-translate-x-in-[-25%] motion-translate-y-in-[0%] motion-opacity-in-[0%] motion-blur-in-[10px]">
-                            Name: {session.name}
+                    <div className="text-3xl md:text-5xl flex justify-between">
+                        <h1 className="text-[#FFDE03] flex-col flex md:flex-row md:gap-2 font-bold motion-translate-x-in-[-25%] motion-translate-y-in-[0%] motion-opacity-in-[0%] motion-blur-in-[10px]">
+                            <span>
+                                Name: 
+                            </span>
+                            <span>
+                                {session.name}
+                            </span>
                         </h1>
-                        <h1 className="font-bold text-[#03DAC6] motion-translate-x-in-[25%] motion-translate-y-in-[0%] motion-opacity-in-[0%] motion-blur-in-[10px]">
-                            Net Worth: ${session.score}
+                        <h1 className="font-bold flex flex-col md:flex-row text-[#03DAC6] motion-translate-x-in-[25%] motion-translate-y-in-[0%] motion-opacity-in-[0%] motion-blur-in-[10px]">
+                            <span>
+                                Net Worth: 
+                            </span>
+                            <span>
+                                ${session.score}
+                            </span>
                         </h1>
 
                     </div>
@@ -273,7 +283,7 @@ export default function GamePage({
                             Add Points
                         </button>
                     </form> */}
-                    <div className={`flex flex-col gap-16 justify-center items-center h-[80vh] ${isSubFading ? "motion-opacity-out-[0%]" : "motion-opacity-in-[0%]"} motion-duration-300`}>
+                    <div className={`flex flex-col gap-16 justify-center items-center h-[75vh] md:h-[80vh] ${isSubFading ? "motion-opacity-out-[0%]" : "motion-opacity-in-[0%]"} motion-duration-300`}>
                         {showCorrect ? (
                             <div className="flex flex-col gap-10 justify-center items-center">
                                 {correct ? (
@@ -281,7 +291,7 @@ export default function GamePage({
                                         <h1 className="text-5xl text-[#00C853] font-bold">
                                             Correct Answer
                                         </h1>
-                                        <h2 className="text-5xl text-[#03DAC6] font-bold">
+                                        <h2 className="text-5xl text-[#03DAC6] font-bold text-center">
                                             You have earned {" "}
                                             <span className="text-[#FFDE03] font-bold text-5xl">
                                                 ${item!.price}
@@ -298,7 +308,7 @@ export default function GamePage({
                                         </h2>
                                     </>
                                 )}
-                                <button className={`bg-[#03DAC6] text-black  px-20 py-3 text-4xl font-bold rounded-md hover:bg-[#53f6e5] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#03DAC6] ${isSubFading ? "motion-opacity-out-[0%]" : "motion-opacity-in-[0%] motion-delay-300"} motion-duration-500`}
+                                <button className={`bg-[#03DAC6] text-black  px-20 py-3 text-2xl md:text-4xl font-bold rounded-md hover:bg-[#53f6e5] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#03DAC6] ${isSubFading ? "motion-opacity-out-[0%]" : "motion-opacity-in-[0%] motion-delay-300"} motion-duration-500`}
                                     onClick={() => {setIsSubFading(true);setShowQuestion(false);setShowCorrect(false); rerollItem()}}
                                 >
                                     Continue
@@ -307,8 +317,8 @@ export default function GamePage({
                         ) : (
                             <>
                                 {(item && showQuestion && question && session) ? (
-                                    <div className="grid grid-cols-5">
-                                        <div className="col-span-1 pt-10">
+                                    <div className="w-full grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-5">
+                                        <div className="col-span-1 md:pt-10 w-full flex flex-col md:flex-row items-center justify-end md:justify-center md:items-start">
                                             <Image
                                                 src={item.image}
                                                 width={200}
@@ -317,13 +327,13 @@ export default function GamePage({
                                                 className="bg-[#1E293B] rounded-md"
                                             />
                                         </div>
-                                        <div className="col-span-4 flex flex-col justify-between h-[80vh] pt-10 pb-20 ps-20 gap-10 items-start">
+                                        <div className="col-span-4 flex flex-col justify-between md:h-[80vh] pt-10 pb-20 md:ps-20 gap-10 items-start">
                                             <span className="flex flex-col gap-5 justify-between w-full">
                                                 <span className="flex justify-between w-full">
-                                                    <h1 className="text-3xl font-bold text-[#00C853]">
+                                                    <h1 className="md:text-3xl font-bold text-[#00C853]">
                                                         Item: {item.name}
                                                     </h1>
-                                                    <h1 className="text-3xl">
+                                                    <h1 className="md:text-3xl">
                                                         Difficulty:{" "}
                                                         <span 
                                                             style={{ color: item.difficulty === "Easy" ? "#00C853" : item.difficulty === "Medium" ? "#FFDE03" : item.difficulty === "Hard" ? "#FF0266" : "#6200EE" }}
@@ -334,20 +344,20 @@ export default function GamePage({
                                                     Worth: ${item.price}
                                                 </h1>
                                             </span>
-                                            <h1 className="text-4xl text-[#FFDE03] font-bold">
+                                            <h1 className="text-3xl md:text-4xl text-[#FFDE03] font-bold">
                                                 Question
                                             </h1>
-                                            <h2 className="text-4xl text-[#03DAC6] font-bold flex-grow select-none" unselectable="on">
+                                            <h2 className="text-2xl md:text-4xl text-[#03DAC6] font-bold flex-grow select-none" unselectable="on">
                                                 {question.question}
                                             </h2>
-                                            <div className="flex flex-col gap-10">
+                                            <div className="flex flex-col gap-10 items-center w-full">
                                                 <span className="flex gap-10">
                                                     <form action={async () => {
                                                         if (question.answers[0] === question.correct_answer) {
                                                             await addPoints(game.id, deviceId, session.score, item.price);
                                                         }
                                                     }}>
-                                                        <button className="w-80 bg-[#03DAC6] text-black  px-20 py-3 text-4xl font-bold rounded-md hover:bg-[#53f6e5] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#03DAC6]"
+                                                        <button className="md:w-80 bg-[#03DAC6] text-black px-12 md:px-20 py-3 text-2xl md:text-4xl font-bold rounded-md hover:bg-[#53f6e5] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#03DAC6]"
                                                             onClick={() => {chooseAnswer(question, question.answers[0])}}
                                                             type="submit"
                                                         >
@@ -359,7 +369,7 @@ export default function GamePage({
                                                             await addPoints(game.id, deviceId, session.score, item.price);
                                                         }
                                                     }}>
-                                                        <button className="w-80 bg-[#FFDE03] text-black  px-20 py-3 text-4xl font-bold rounded-md hover:bg-[#ffe95b] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#FFDE03]"
+                                                        <button className="md:w-80 bg-[#FFDE03] text-black px-12 md:px-20 py-3 text-2xl md:text-4xl font-bold rounded-md hover:bg-[#ffe95b] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#FFDE03]"
                                                             onClick={() => {chooseAnswer(question, question.answers[1])}}
                                                             type="submit"
                                                         >
@@ -373,7 +383,7 @@ export default function GamePage({
                                                             await addPoints(game.id, deviceId, session.score, item.price);
                                                         }
                                                     }}>
-                                                        <button className="w-80 bg-[#FF0266] text-black  px-20 py-3 text-4xl font-bold rounded-md hover:bg-[#ff4d8c] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#FF0266]"
+                                                        <button className="md:w-80 bg-[#FF0266] text-black px-12 md:px-20 py-3 text-2xl md:text-4xl font-bold rounded-md hover:bg-[#ff4d8c] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#FF0266]"
                                                             onClick={() => {chooseAnswer(question, question.answers[2])}}
                                                             type="submit"
                                                         >
@@ -385,7 +395,7 @@ export default function GamePage({
                                                             await addPoints(game.id, deviceId, session.score, item.price);
                                                         }
                                                     }}>
-                                                        <button className="w-80 bg-[#6200EE] text-black  px-20 py-3 text-4xl font-bold rounded-md hover:bg-[#7d3dff] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#6200EE]"
+                                                        <button className="md:w-80 bg-[#6200EE] text-black px-12 md:px-20 py-3 text-2xl md:text-4xl font-bold rounded-md hover:bg-[#7d3dff] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#6200EE]"
                                                             onClick={() => {chooseAnswer(question, question.answers[3])}}   
                                                             type="submit"
                                                         >
@@ -399,8 +409,8 @@ export default function GamePage({
                                 ) : (
                                     <>
                                         {(item && showItem)? (
-                                            <div className="grid grid-cols-4">
-                                                <div>
+                                            <div className="grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-5 w-full gap-6 md:gap-0">
+                                                <div className="flex w-full md:w-full items-end md:items-start md:pt-10 justify-center">
                                                     <Image
                                                         src={item.image}
                                                         width={300}
@@ -409,7 +419,7 @@ export default function GamePage({
                                                         className="bg-[#1E293B] rounded-md"
                                                     />
                                                 </div>
-                                                <div className="col-span-3 flex flex-col h-[80vh] justify-between pt-20 px-10 pb-10">
+                                                <div className="col-span-4 flex flex-col md:h-[80vh] gap-4 md:gap-0 justify-between md:pt-20 px-10 pb-10">
                                                     <span className="flex flex-col gap-5 justify-center items-start">
                                                         <h1 className="text-4xl font-bold text-[#00C853]">
                                                             Item: {item.name}
@@ -425,16 +435,16 @@ export default function GamePage({
                                                         </h1>
                                                     </span>
                                                     <span className="flex flex-col gap-10 justify-center items-start">
-                                                        <h1 className="text-5xl text-[#03A9F4]">
+                                                        <h1 className="text-3xl md:text-5xl text-[#03A9F4]">
                                                             Play to get item?
                                                         </h1>
                                                         <span className="flex gap-10">
-                                                            <button className="bg-[#03DAC6] text-black  px-20 py-3 text-4xl font-bold rounded-md hover:bg-[#53f6e5] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#03DAC6]"
+                                                            <button className="bg-[#03DAC6] text-black px-5 py-2 md:px-20 md:py-3 text-2xl md:text-4xl font-bold rounded-md hover:bg-[#53f6e5] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#03DAC6]"
                                                                 onClick={() => {showGameQuestion(item.difficulty)}}
                                                             >
                                                                 Continue
                                                             </button>
-                                                            <button className="bg-[#FFDE03] text-black  px-20 py-3 text-4xl font-bold rounded-md hover:bg-[#ffe95b] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#FFDE03]"
+                                                            <button className="bg-[#FFDE03] text-black px-5 py-2 md:px-20 md:py-3 text-2xl md:text-4xl font-bold rounded-md hover:bg-[#ffe95b] transition-all duration-150 ease-in-out drop-shadow-[0px_0px_6px_#FFDE03]"
                                                                 onClick={rerollItem}
                                                             >
                                                                 Reroll Item
@@ -445,7 +455,7 @@ export default function GamePage({
                                             </div>
                                         ) : (
                                             <>
-                                                <h2 className="font-bold text-5xl text-[#00C853]">
+                                                <h2 className="font-bold text-4xl w-full md:text-5xl text-[#00C853] text-center">
                                                     Choose one of the boxes
                                                 </h2>
                                                 <motion.div className="flex justify-between gap-20"
@@ -513,16 +523,16 @@ export default function GamePage({
     }
 
     return (
-        <main className="flex flex-col items-start justify-around h-screen px-16 pt-16">
+        <main className="flex flex-col w-full items-start justify-around h-screen px-0 md:px-16 md:pt-16">
             {!showConfirmation ? (
                 <div className={`flex flex-col items-center justify-center w-full gap-10 ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%] motion-duration-2000"}`}>
-                    <h1 className="text-[calc(4vw-max(.5vw,.5rem))] text-[#FFDE03] font-bold">
+                    <h1 className="text-center w-full text-5xl md:text-[calc(4vw-max(.5vw,.5rem))] text-[#FFDE03] font-bold">
                         Enter your name.
                     </h1>
                     <Form {...form}>
                         <form 
                             action={handleJoin}
-                            className="space-y-6 w-[50%]"
+                            className="space-y-6 md:w-[50%]"
                             >
                             <div className="">
                                 <FormField
@@ -562,20 +572,20 @@ export default function GamePage({
                 <>
                     {(game.started || started) ? (
                         <div className={`flex flex-col items-center justify-center w-full gap-10 ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%] motion-duration-2000"}`}>
-                            <h1 className="text-[calc(3.5vw-max(.2vw,.2rem))] text-[#00C853] font-bold">
+                            <h1 className="text-5xl md:text-[calc(3.5vw-max(.2vw,.2rem))] text-[#00C853] font-bold text-center">
                                 The games have started.
                             </h1>
-                            <h2 className="text-[calc(3vw-max(.1vw,.1rem))] text-[#03DAC6] text-center font-bold">
+                            <h2 className="text-xl md:text-[calc(3vw-max(.1vw,.1rem))] text-[#03DAC6] text-center font-bold">
                                 You will proceed in {timer} seconds
                             </h2>
                         </div>
                     ) : (
                         <div className={`flex flex-col items-center justify-center w-full gap-10 ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%] motion-duration-500  motion-delay-300"}`}>
-                            <h1 className="text-[calc(3.5vw-max(.2vw,.2rem))] text-[#FFDE03] font-bold">
+                            <h1 className="text-center text-5xl md:text-[calc(3.5vw-max(.2vw,.2rem))] text-[#FFDE03] font-bold">
                                 You’re in the games.
                             </h1>
-                            <h2 className="text-[calc(3vw-max(.1vw,.1rem))] text-[#00C853] text-center font-bold">
-                                {started ? "Game has started" : "Please wait as the games begin. Waiting for the game to start"}
+                            <h2 className="text-center text-4xl md:text-[calc(3vw-max(.1vw,.1rem))] text-[#00C853] font-bold">
+                                {started ? "Game has started" : "Please wait as the games begin. Waiting for the game to start..."}
                             </h2>
                         </div>
                     )}

@@ -17,7 +17,7 @@ const AdminPage = async ({
     }
 
     const game = await getGame(gameId);
-    if (!game) {
+    if (!game || game.ended) {
         return redirect("/admin");
         // return <div>Game doesn&apos;t exist <Link href="/admin">Go back to admin</Link></div>;
     }    

@@ -14,3 +14,7 @@ export const kickPlayer = async (gameId: string, deviceId: string) => {
 export const setGameStarted = async (gameId: string) => {
     await db.update(gameTable).set({started: true}).where(eq(gameTable.id, gameId));
 }
+
+export const setGameEnded = async (gameId: string) => {
+    await db.update(gameTable).set({ended: true}).where(eq(gameTable.id, gameId));
+}

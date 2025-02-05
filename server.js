@@ -42,11 +42,11 @@ app.prepare().then(() => {
             io.emit("message", message)
         })
     
-        socket.on("stop", () => {
+        socket.on("stop", (gameId) => {
             console.log("Game has stopped");
             timeouts.forEach(clearTimeout);
             timeouts = [];
-            io.emit("serverstop", true);
+            io.emit("serverstop", gameId);
         });
     
         socket.on("join", (name, deviceId) => {

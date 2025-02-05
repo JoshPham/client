@@ -46,9 +46,9 @@ export default function JoinPage() {
     }
     
     return (
-        <main className="flex flex-col items-start justify-around h-screen ps-32 pe-16 pt-16 motion-opacity-in-[0%] motion-duration-2000">
+        <main className="flex flex-col items-start justify-around h-screen px-5 md:ps-32 md:pe-16 md:pt-16 motion-opacity-in-[0%] motion-duration-2000">
           <div className={`flex flex-col items-center justify-center w-full gap-10 ${isFading ? "motion-opacity-out-[0%]" : "motion-opacity-in-[100%]"} motion-duration-300`}>
-            <h1 className="text-[calc(4vw-max(.5vw,.5rem))] text-[#FFDE03] font-bold">
+            <h1 className="text-5xl md:text-[calc(4vw-max(.5vw,.5rem))] text-[#FFDE03] font-bold text-center">
                 Enter the join code to get started.
             </h1>
             {/* <p className="text-[calc(4vw-max(1vw,1rem))] font-[500] text-[#FFDE03]">
@@ -57,7 +57,7 @@ export default function JoinPage() {
             <Form {...form}>
                 <form 
                       onSubmit={form.handleSubmit(onSubmit)}
-                      className="space-y-6 w-[35%]"
+                      className="space-y-6 md:w-[35%]"
                       >
                     <div className="">
                         <FormField

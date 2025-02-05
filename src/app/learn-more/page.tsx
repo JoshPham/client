@@ -20,12 +20,12 @@ export default function LearnMorePage() {
 
     if (page === 1) {
         return (
-            <main className={`flex flex-col p-10 gap-y-4 justify-between items-start pt-10 pb-20 ps-28 gap-28 h-screen ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%] motion-duration-2000"}`}>
+            <main className={`flex flex-col p-10 gap-y-4 justify-between items-start pt-10 pb-20 md:ps-28 gap-28 h-screen ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%] motion-duration-2000"}`}>
                 <span className="flex flex-col gap-y-10 h-full">
-                    <h1 className="font-bold text-[#6200EE] text-5xl block">
+                    <h1 className="font-bold text-[#6200EE] text-2xl md:text-5xl block">
                         What did you just witness?
                     </h1>
-                    <p className="text-4xl text-[#00C853] block">
+                    <p className="text-xl md:text-4xl text-[#00C853] block">
                         You just experienced the idea of <span className="text-[#03DAC6] font-bold">Materialism</span> an ideology that favors material possessions over spiritual values.
                         <br />
                         <br />
@@ -36,7 +36,7 @@ export default function LearnMorePage() {
                 <br />
                 <br />
                 <span className="flex justify-center w-full">
-                    <button className="bg-[#03DAC6] text-3xl px-20 py-2 rounded-md text-black font-bold hover:bg-[#3ae7d6] transition-all duration-150 ease-in-out" 
+                    <button className="bg-[#03DAC6] text-2xl md:text-3xl px-8 md:px-20 py-2 rounded-md text-black font-bold hover:bg-[#3ae7d6] transition-all duration-150 ease-in-out" 
                         onClick={() => handleNextPage(2)}
                     >
                         Click to view more -{">"}
@@ -57,28 +57,28 @@ export default function LearnMorePage() {
                 >
                         {"<"}- Go Back
                 </button>
-                <section className="flex flex-col pt-10 pb-20 justify-start h-[150vh] px-28 ">
-                    <motion.span className="flex flex-col gap-y-10  item"
-                        initial={
-                            { opacity: 0 }
-                        }
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ amount: 1 }}
+                <section className="flex flex-col pt-10 pb-20 justify-start h-[100vh] md:px-28 ">
+                    <span className="flex flex-col gap-y-10 "
+                        // initial={
+                        //     { opacity: 0 }
+                        // }
+                        // whileInView={{ opacity: 1 }}
+                        // viewport={{ amount: 0.1}}
                     >
-                        <h1 className="font-bold text-[#6200EE] text-5xl block">
+                        <h1 className="font-bold text-[#6200EE] text-3xl md:text-5xl block">
                             My Research
                         </h1>
                         <p
-                            className="text-4xl text-[#00C853] block"
+                            className="text-2xl md:text-4xl text-[#00C853] block"
                         >
                             I conducted a study on the effects of materialism on mental health and well-being.
                             <br />
                             <br />
                             Here are some of the key findings (scroll):
                         </p>
-                    </motion.span>
+                    </span>
                 </section>
-                <motion.section className="flex flex-col h-[120vh] px-28"
+                <motion.section className="flex flex-col h-[120vh] md:px-28"
                     initial={
                         { opacity: 0 }
                     }
@@ -96,14 +96,14 @@ export default function LearnMorePage() {
                     </Link>
 
                 </motion.section>
-                <motion.section className="flex flex-col h-[120vh] w-full gap-10 px-28"
+                <motion.section className="flex flex-col h-[120vh] w-full gap-10 md:px-28"
                     initial={
                         { opacity: 0 }
                     }
                     whileInView={{ opacity: 1 }}
                     viewport={{ amount: 0.3}}
                 >
-                    <div className="grid grid-cols-2 gap-x-32 w-full">
+                    <div className="flex flex-col gap-y-10 md:grid md:grid-cols-2 md:gap-x-32 w-full">
                         <motion.div className="w-full max-w-md mx-auto"
                             initial={
                                 { opacity: 0 }
@@ -113,7 +113,7 @@ export default function LearnMorePage() {
                             transition={{ delay: 0 }}
                         >
                             <h1
-                                className="font-bold text-5xl block text-[#F57F17]"
+                                className="font-bold text-2xl md:text-5xl block text-[#F57F17] leading-10"
                             >
                                 <span className="underline">
                                     First-year college students valued being
@@ -125,7 +125,7 @@ export default function LearnMorePage() {
                                 <span className="underline">
                                     {" "}
                                 </span>
-                                <span className="font-extrabold text-7xl underline text-[#FF2F00]">
+                                <span className="font-extrabold text-7xl underline text-[#FF2F00] leading-10">
                                     2x 
                                 </span>  
                                 <span>
@@ -143,7 +143,7 @@ export default function LearnMorePage() {
                             transition={{ delay: 0.2 }}
                         >
                             <h1
-                                className="font-bold text-5xl block text-[#03A9F4]"
+                                className="font-bold text-2xl md:text-5xl block text-[#03A9F4] leading-10"
                             >
                                 <span className="underline">
                                     Those who wanted a 
@@ -163,23 +163,31 @@ export default function LearnMorePage() {
                             </h1>
                         </motion.div>
                     </div>
-                    <Link
-                        href="/citations"
-                        className="flex flex-row gap-x-2 text-4xl text-[#FFDE03] font-bold underline hover:no-underline"
+                    <motion.span
+                        initial={
+                            { opacity: 0 }
+                        }
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ amount: 0.2}}
                     >
-                        (Lieber)
-                    </Link>
+                        <Link
+                            href="/citations"
+                            className="flex flex-row gap-x-2 text-4xl text-[#FFDE03] font-bold underline hover:no-underline"
+                        >
+                            (Lieber)
+                        </Link>
+                    </motion.span>
                     
 
                 </motion.section>
-                <motion.section className="flex flex-col gap-y-10 h-[120vh] px-28"
+                <motion.section className="flex flex-col gap-y-10 h-[120vh] md:px-28"
                     initial={
                         { opacity: 0 }
                     }
                     whileInView={{ opacity: 1 }}
                     viewport={{ amount: 0.2}}
                 >
-                    <div className="grid grid-cols-2 gap-x-32">
+                    <div className="flex flex-col md:grid md:grid-cols-2 gap-y-10 md:gap-x-32">
                         <motion.div className="flex flex-col gap-y-2"
                             initial={
                                 { opacity: 0 }
@@ -187,7 +195,7 @@ export default function LearnMorePage() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ amount: 0.2}}
                         >
-                            <h1 className="font-bold text-5xl block underline text-[#00C853]">
+                            <h1 className="font-bold text-2xl md:text-5xl block underline text-[#00C853]">
                                 Material aspirations have historically led to increased productivity and innovation
                             </h1>
                             <Link
@@ -205,7 +213,7 @@ export default function LearnMorePage() {
                             viewport={{ amount: 0.2}}
                             transition={{ delay: 0.2 }}
                         >
-                            <h1 className="font-bold text-5xl block underline text-[#63D02D]">
+                            <h1 className="font-bold text-2xl md:text-5xl block underline text-[#63D02D]">
                                 Consumerism improves the economy, which leads to a better quality of life
                             </h1>
                             <Link
@@ -218,7 +226,7 @@ export default function LearnMorePage() {
                     </div>
 
                 </motion.section>
-                <motion.section className="flex flex-col gap-y-10 h-[120vh] px-28"
+                <motion.section className="flex flex-col gap-y-10 h-[120vh] md:px-28"
                     initial={
                         { opacity: 0 }
                     }
@@ -233,7 +241,7 @@ export default function LearnMorePage() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ amount: 0.2}}
                         >
-                            <h1 className="text-5xl block text-[#63D02D]">
+                            <h1 className="text-3xl md:text-5xl block text-[#63D02D]">
                                 At the end of the day, {" "}
                                 <span className="font-bold text-[#FF0266]">
                                      materialism prevents us from developing spiritually and morally. It just makes us selfish and greedy.
@@ -248,7 +256,7 @@ export default function LearnMorePage() {
                         </motion.div>
                     </div>
                 </motion.section>
-                <motion.section className="flex flex-col gap-y-10 h-[50vh] w-full"
+                <motion.section className="flex flex-col gap-y-10 h-[100vh] w-full justify-center "
                     initial={
                         { opacity: 0 }
                     }

@@ -50,19 +50,19 @@ export default function Home() {
   
   return (
     <>
-      <main className="flex flex-col items-start justify-around h-screen ps-32 pe-16 pb-5 pt-[calc(1vh+1rem)]">
-        <div className="text-[calc(7.5vw-max(20%,2rem))] font-[1000] flex flex-col">
-          <span className="">
+      <main className="flex flex-col items-start justify-around h-screen px-5 md:ps-32 md:pe-16 pb-5 pt-[calc(1vh+1rem)]">
+        <div className="font-[1000] flex flex-col gap-5 md:gap-0">
+          <span className="text-5xl md:text-[calc(7.5vw-max(10%,1.2rem))] leading-[10vh] md:leading-[15vh] md:gap-0">
             <h1 className="bg-[#FF0266] text-[#6200EE] motion-preset-typewriter-[11] motion-duration-[4s] ">Materialism</h1>
             <h1 className="bg-[#F57F17] text-[#0039B3] motion-preset-typewriter-[3] motion-duration-[4s]">and</h1>
             <h1 className="bg-[#6200EE] text-[#FFDE03] motion-preset-typewriter-[11] motion-duration-[4s]">&quot;Happiness&quot;</h1>
           </span>
-          <p className="text-[calc(4vw-max(1vw,1rem))] font-semibold text-[#00C853] w-full p-5 motion-scale-in-[0.5] motion-translate-x-in-[-48%] motion-translate-y-in-[0%] motion-opacity-in-[50%]
+          <p className="md:text-[calc(4vw-max(20%,1.5rem))] font-semibold text-[#00C853] w-full p-5 motion-scale-in-[0.5] motion-translate-x-in-[-48%] motion-translate-y-in-[0%] motion-opacity-in-[50%]
           motion-blur-in-[10px] motion-duration-500">
             a web project developed and <br /> programmed by Josh Pham
           </p>
         </div>
-        <p className="ps-[calc(59vw-clamp(2rem,4vw,6rem))] w-full text-left flex text-[calc(3vw-max(1vw,1rem))] font-semibold text-[#03DAC6]  after:content-['.'] after:animate-loadingDots 
+        <p className="md:ps-[calc(59vw-clamp(2rem,4vw,6rem))] w-full text-left flex md:text-[calc(3vw-max(1vw,1rem))] font-semibold text-[#03DAC6]  after:content-['.'] after:animate-loadingDots 
           motion-scale-in-[0.5] motion-translate-x-in-[60%] motion-translate-y-in-[0%] motion-opacity-in-[50%]
           motion-blur-in-[10px] motion-delay-300 motion-duration-500">
           Waiting for the game to start

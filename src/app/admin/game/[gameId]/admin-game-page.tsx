@@ -3,7 +3,7 @@
 import { Game } from "@/lib/schema/gameSchema";
 import { useEffect, useState } from "react";
 import * as motion from "motion/react-client"
-import { kickPlayer, setGameStarted } from "./actions";
+import { kickPlayer, setGameEnded, setGameStarted } from "./actions";
 import { socket } from "@/socket";
 
 const possiblePeople = [
@@ -133,15 +133,20 @@ export function AdminClient({
         };
     }, [game, isConnected]);
 
-    const addPerson = () => {
-        setPeople((people) => {
-            if (!people) {
-                return [possiblePeople[0]];
-            }
-            const newArray = [...people, possiblePeople[Math.floor(Math.random() * possiblePeople.length)]];
-            console.table(newArray);
-            return newArray;
-        });;
+    // const addPerson = () => {
+    //     setPeople((people) => {
+    //         if (!people) {
+    //             return [possiblePeople[0]];
+    //         }
+    //         const newArray = [...people, possiblePeople[Math.floor(Math.random() * possiblePeople.length)]];
+    //         console.table(newArray);
+    //         return newArray;
+    //     });;
+    // }
+
+    async function stopGame() {
+        socket!.emit("stop", game!.id);
+        await setGameEnded(game!.id);
     }
 
     const startGame = () => {
@@ -168,6 +173,13 @@ export function AdminClient({
                         <h1 className="motion-translate-x-in-[25%] motion-translate-y-in-[0%] motion-opacity-in-[0%] motion-blur-in-[10px]">
                             Time Left: {time}
                         </h1>
+                        {(time == 0) && (
+                            <button className="text-4xl py-3 px-5 font-bold text-black rounded-md bg-[#FF0266] hover:bg-[#f84b91]"
+                                onClick={stopGame}
+                            >
+                                Stop Game
+                            </button>
+                        )}
                     </div>
                     <div className="grid grid-cols-3 px-20 w-full max-h-[75vh] p-4 gap-10">
                         <div className="col-span-1 flex gap-4">
@@ -258,7 +270,7 @@ export function AdminClient({
                                         motion-translate-y-in-[0%] motion-opacity-in-[0%] 
                                         motion-blur-in-[10px] motion-delay-1000 motion-duration-500
                                         shadow-[0px_0px_20px_rgba(0,0,0,0.25)]"
-                            onClick={addPerson}
+                            onClick={stopGame}
                         >
                             Stop Game
                         </button>
