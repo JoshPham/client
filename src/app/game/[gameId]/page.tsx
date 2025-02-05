@@ -18,7 +18,7 @@ const Page = async ({
         // );
     }
 
-    let game = await getGame(gameId);
+    const game = await getGame(gameId);
     if (!game || game.ended) {
         // game = { id: "1", code: "1234", time: 60, started: false, ended: false, createdAt: new Date(), stoppedAt: null };
         return redirect("/join");

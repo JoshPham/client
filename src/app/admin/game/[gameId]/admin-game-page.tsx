@@ -6,34 +6,6 @@ import * as motion from "motion/react-client"
 import { kickPlayer, setGameEnded, setGameStarted } from "./actions";
 import { socket } from "@/socket";
 
-const possiblePeople = [
-    {
-        name: "Josh Pham",
-        deviceId: "123",
-        score: 0,
-    }, 
-    {
-        name: "Aditya Kruthiventi",
-        deviceId: "123",
-        score: 0,
-    }, 
-    {
-        name: "Dulguun Goosh",
-        deviceId: "123",
-        score: 0,
-    }, 
-    {
-        name: "Dhruv Jadhav",
-        deviceId: "123",
-        score: 0,
-    },
-    {
-        name: "Syed Rizvi",
-        deviceId: "123",
-        score: 0,
-    }
-]
-
 function compare( a: PersonProps, b: PersonProps) {
     if ( a.score! < b.score! ){
       return 1;
