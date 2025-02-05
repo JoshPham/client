@@ -3,9 +3,8 @@
 import { Game } from "@/lib/schema/gameSchema";
 import { useEffect, useState } from "react";
 import * as motion from "motion/react-client"
-import { io } from "socket.io-client";
-import type { Socket } from "socket.io-client";
 import { kickPlayer, setGameStarted } from "./actions";
+import { socket } from "@/socket";
 
 const possiblePeople = [
     {
@@ -59,17 +58,29 @@ export function AdminClient({
     game: Game | undefined;
     initialPeople: PersonProps[];
 }) {
+    const [isConnected, setIsConnected] = useState(false);
     const [people, setPeople] = useState<PersonProps[]>(initialPeople);
-    const [socket, setSocket] = useState<Socket | undefined>(undefined);
     const [showGame, setShowGame] = useState<boolean>(false);
     const [isFading, setIsFading] = useState<boolean>(false);
     const [messages, setMessages] = useState<string[]>([]);
-    const [time, setTime] = useState<number>(game! .time!);
+    const [time, setTime] = useState<number>(game!.time!);
 
 
     useEffect(() => {
-        const socket = io("localhost:3000");
-        console.log("Connecting to socket");
+        socket.on("connect", () => {
+          console.log("✅ WebSocket Connected");
+          setIsConnected(true);
+        });
+
+        if (isConnected) {
+            console.log("connected")
+        }
+    
+        socket.on("disconnect", () => {
+          console.log("❌ WebSocket Disconnected");
+          setIsConnected(false);
+        });
+
         socket.on("join", (name: string, deviceId: string) => {
             console.log("JOINED", name)
             setPeople((people) => {
@@ -113,12 +124,14 @@ export function AdminClient({
             });
         })
         
-        setSocket(socket);
-
         return () => {
-            socket.disconnect();
+            socket.off("connect");
+            socket.off("disconnect");
+            socket.off("join");
+            socket.off("timer");
+            socket.off("addPoints");
         };
-    }, [game]);
+    }, [game, isConnected]);
 
     const addPerson = () => {
         setPeople((people) => {

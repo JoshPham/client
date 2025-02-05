@@ -12,8 +12,7 @@ import { useForm } from "react-hook-form"
 import { z } from "zod";
 import { motion } from "framer-motion";
 import { addPoints, joinGame } from "./actions";
-import { io } from "socket.io-client";
-import type { Socket } from "socket.io-client";
+import { socket } from "@/socket";
 import Image from "next/image";
 
 import BoxPic from "@/images/box.png";
@@ -56,11 +55,11 @@ export default function GamePage({
     playerSession: PlayerSession
     deviceId: string
 }) {
+    const [isConnected, setIsConnected] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
     const [isFading, setIsFading] = useState<boolean>(false);
     const [isSubFading, setIsSubFading] = useState<boolean>(false);
-    const [socket, setSocket] = useState<Socket | undefined>(undefined);
     const [started, setStarted] = useState<boolean>(false);
     const [timer, setTimer] = useState<number>(3);
     const [showGame, setShowGame] = useState<boolean>(false);
@@ -95,7 +94,19 @@ export default function GamePage({
     }, [game.started, started, showConfirmation, timer]);
 
     useEffect(() => {
-        const socket = io("localhost:3000");
+        socket.on("connect", () => {
+          console.log("✅ WebSocket Connected");
+          setIsConnected(true);
+        });
+
+        if (isConnected) {
+            console.log("connected")
+        }
+    
+        socket.on("disconnect", () => {
+          console.log("❌ WebSocket Disconnected");
+          setIsConnected(false);
+        });
         socket.on("serverstart", () => {
             console.log("Game has started");
             setIsFading(true);
@@ -115,12 +126,14 @@ export default function GamePage({
             }, 1000);
         })
 
-        setSocket(socket);
-        if (playerSession) {
-            setShowConfirmation(true);
-        }
+        return () => {
+            socket.off("connect");
+            socket.off("disconnect");
+            socket.off("serverstop")
+            socket.off("serverstart")
+          };
         
-    }, [playerSession]);
+    }, [playerSession, isConnected]);
 
     const form = useForm<z.infer<typeof joinSchema>>({
         resolver: zodResolver(joinSchema),

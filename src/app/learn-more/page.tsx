@@ -7,30 +7,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-const data1 = {
-  labels: ["Very well off financially", "Other"],
-  datasets: [
-    {
-      data: [42, 58],
-      backgroundColor: ["#fadf4b", "#3204ac"],
-      hoverBackgroundColor: ["F8E359590de5", "#590de5"],
-    },
-  ],
-};
-
-const data2 = {
-    labels: ["Very well off financially", "Other"],
-    datasets: [
-      {
-        data: [82, 18],
-        backgroundColor: ["#fadf4b", "#3204ac"],
-        hoverBackgroundColor: ["F8E359590de5", "#590de5"],
-      },
-    ],
-};
-  
 
 
 export default function LearnMorePage() {
@@ -75,7 +51,7 @@ export default function LearnMorePage() {
 
     if (page === 2) {
         return (
-            <main className={`flex flex-col p-10 gap-y-2 justify-between items-start ps-28 gap-28 min-h-screen ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%]"}`}
+            <main className={`flex flex-col p-10 gap-y-2 justify-between items-start px-28 gap-28 min-h-screen ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%]"}`}
             
             >
                 <button
@@ -131,14 +107,6 @@ export default function LearnMorePage() {
                     viewport={{ amount: 0.3}}
                 >
                     <div className="flex justify-center w-full">
-                        <Card className="p-4 w-full max-w-md mx-auto">
-                            <h2 className="text-xl font-bold text-center mb-4 text-white">
-                                People&apos;s Important Goals in 1967
-                            </h2>
-                            <CardContent className="flex justify-center">
-                                <Pie data={data1} className="text-white "/>
-                            </CardContent>
-                        </Card>
                         <motion.div className="w-full max-w-md mx-auto"
                             initial={
                                 { opacity: 0 }
@@ -147,14 +115,7 @@ export default function LearnMorePage() {
                             viewport={{ amount: 0.2}}
                             transition={{ delay: 0.2 }}
                         >
-                            <Card className="p-4 w-full h-full max-w-md mx-auto">
-                                <h2 className="text-xl font-bold text-center mb-4 text-white">
-                                    People&apos;s Important Goals in 1967
-                                </h2>
-                                <CardContent className="flex justify-center">
-                                    <Pie data={data2} className="text-white "/>
-                                </CardContent>
-                            </Card>
+                            
                         </motion.div>
                     </div>
                     <Link
