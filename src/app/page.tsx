@@ -50,8 +50,8 @@ export default function Home() {
   
   return (
     <>
-      <main className="flex flex-col items-start justify-around h-screen ps-32 pe-16 pt-14 pb-5">
-        <div className="text-[calc(7vw-max(.5vw,.5rem))] font-[1000] flex flex-col">
+      <main className="flex flex-col items-start justify-around h-screen ps-32 pe-16 pb-5 pt-[calc(1vh+1rem)]">
+        <div className="text-[calc(7.5vw-max(20%,2rem))] font-[1000] flex flex-col">
           <span className="">
             <h1 className="bg-[#FF0266] text-[#6200EE] motion-preset-typewriter-[11] motion-duration-[4s] ">Materialism</h1>
             <h1 className="bg-[#F57F17] text-[#0039B3] motion-preset-typewriter-[3] motion-duration-[4s]">and</h1>
@@ -62,7 +62,7 @@ export default function Home() {
             a web project developed and <br /> programmed by Josh Pham
           </p>
         </div>
-        <p className="ps-[calc(53vw-clamp(2rem,4vw,6rem))] w-full text-left flex text-[calc(3.5vw-max(1vw,1rem))] font-semibold text-[#03DAC6]  after:content-['.'] after:animate-loadingDots 
+        <p className="ps-[calc(59vw-clamp(2rem,4vw,6rem))] w-full text-left flex text-[calc(3vw-max(1vw,1rem))] font-semibold text-[#03DAC6]  after:content-['.'] after:animate-loadingDots 
           motion-scale-in-[0.5] motion-translate-x-in-[60%] motion-translate-y-in-[0%] motion-opacity-in-[50%]
           motion-blur-in-[10px] motion-delay-300 motion-duration-500">
           Waiting for the game to start

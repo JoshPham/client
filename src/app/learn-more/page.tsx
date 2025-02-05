@@ -3,10 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-
+import { CircleArrowUp } from 'lucide-react';
 
 
 export default function LearnMorePage() {
@@ -51,7 +48,7 @@ export default function LearnMorePage() {
 
     if (page === 2) {
         return (
-            <main className={`flex flex-col p-10 gap-y-2 justify-between items-start px-28 gap-28 min-h-screen ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%]"}`}
+            <main className={`flex flex-col p-10 gap-y-2 justify-between items-start gap-28 min-h-screen ${isFading ? "motion-opacity-out-[0%] motion-duration-300" : "motion-opacity-in-[0%]"}`}
             
             >
                 <button
@@ -60,7 +57,7 @@ export default function LearnMorePage() {
                 >
                         {"<"}- Go Back
                 </button>
-                <section className="flex flex-col pt-10 pb-20 justify-start h-[150vh]">
+                <section className="flex flex-col pt-10 pb-20 justify-start h-[150vh] px-28 ">
                     <motion.span className="flex flex-col gap-y-10  item"
                         initial={
                             { opacity: 0 }
@@ -81,7 +78,7 @@ export default function LearnMorePage() {
                         </p>
                     </motion.span>
                 </section>
-                <motion.section className="flex flex-col h-[120vh]"
+                <motion.section className="flex flex-col h-[120vh] px-28"
                     initial={
                         { opacity: 0 }
                     }
@@ -99,14 +96,44 @@ export default function LearnMorePage() {
                     </Link>
 
                 </motion.section>
-                <motion.section className="flex flex-col h-[120vh] w-full gap-10"
+                <motion.section className="flex flex-col h-[120vh] w-full gap-10 px-28"
                     initial={
                         { opacity: 0 }
                     }
                     whileInView={{ opacity: 1 }}
                     viewport={{ amount: 0.3}}
                 >
-                    <div className="flex justify-center w-full">
+                    <div className="grid grid-cols-2 gap-x-32 w-full">
+                        <motion.div className="w-full max-w-md mx-auto"
+                            initial={
+                                { opacity: 0 }
+                            }
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ amount: 0.2}}
+                            transition={{ delay: 0 }}
+                        >
+                            <h1
+                                className="font-bold text-5xl block text-[#F57F17]"
+                            >
+                                <span className="underline">
+                                    First-year college students valued being
+                                    {" "}
+                                </span> 
+                                <span className="text-[#FFDE03] underline">
+                                    &quot;Very well off financially&quot;
+                                </span>
+                                <span className="underline">
+                                    {" "}
+                                </span>
+                                <span className="font-extrabold text-7xl underline text-[#FF2F00]">
+                                    2x 
+                                </span>  
+                                <span>
+                                    {" "}
+                                    as much in 2019 than in 1967
+                                </span>
+                            </h1>
+                        </motion.div>
                         <motion.div className="w-full max-w-md mx-auto"
                             initial={
                                 { opacity: 0 }
@@ -115,7 +142,25 @@ export default function LearnMorePage() {
                             viewport={{ amount: 0.2}}
                             transition={{ delay: 0.2 }}
                         >
-                            
+                            <h1
+                                className="font-bold text-5xl block text-[#03A9F4]"
+                            >
+                                <span className="underline">
+                                    Those who wanted a 
+                                    {"  "}
+                                </span> 
+                                <span className="text-[#03DAC6] underline">
+                                    &apos;meaningful philosophy of life&apos;
+                                </span>
+                                <span className="underline">
+                                    {" "}
+                                    dropped by nearly 
+                                    {" "}
+                                </span>
+                                <span className="underline font-extrabold text-7xl text-[#FF0266]">
+                                    50%
+                                </span>  
+                            </h1>
                         </motion.div>
                     </div>
                     <Link
@@ -127,7 +172,7 @@ export default function LearnMorePage() {
                     
 
                 </motion.section>
-                <motion.section className="flex flex-col gap-y-10 h-[120vh]"
+                <motion.section className="flex flex-col gap-y-10 h-[120vh] px-28"
                     initial={
                         { opacity: 0 }
                     }
@@ -173,7 +218,7 @@ export default function LearnMorePage() {
                     </div>
 
                 </motion.section>
-                <motion.section className="flex flex-col gap-y-10 h-[120vh]"
+                <motion.section className="flex flex-col gap-y-10 h-[120vh] px-28"
                     initial={
                         { opacity: 0 }
                     }
@@ -203,7 +248,7 @@ export default function LearnMorePage() {
                         </motion.div>
                     </div>
                 </motion.section>
-                <motion.section className="flex flex-col gap-y-10 h-[120vh] w-full"
+                <motion.section className="flex flex-col gap-y-10 h-[50vh] w-full"
                     initial={
                         { opacity: 0 }
                     }
