@@ -7,11 +7,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export async function hasSwearWords(text: string) {
-  const apiKey = process.env.NEXT_PUBLIC_NINJA_API_KEY;
+  // const apiKey = process.env.NEXT_PUBLIC_NINJA_API_KEY;
 
-  if (!apiKey) {
-    throw new Error("NINJA_API_KEY is not defined in the environment variables.");
-  }
+  // if (!apiKey) {
+  //   throw new Error("NINJA_API_KEY is not defined in the environment variables.");
+  // }
 
   // const response = await fetch(`https://api.api-ninjas.com/v1/profanityfilter?text=${text}`, {
   //   headers: {
