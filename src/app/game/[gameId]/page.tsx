@@ -27,8 +27,9 @@ const Page = async ({
     const playerSession = await getPlayerSession(gameId);
     const deviceId = await getDeviceId();
 
+    console.log("game", playerSession);
     return (
-        <main className="flex flex-col px-5 md:px-28 pt-4 gap-y-4 justify-start h-screen">
+        <main className="flex flex-col px-5 md:px-28 pt-4 gap-y-4 justify-start h-screen md:h-screen">
             <GamePage game={game} playerSession={playerSession} deviceId={deviceId} />
         </main>
     )

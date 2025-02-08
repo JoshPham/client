@@ -16,5 +16,18 @@ export const setGameStarted = async (gameId: string) => {
 }
 
 export const setGameEnded = async (gameId: string) => {
-    await db.update(gameTable).set({ended: true}).where(eq(gameTable.id, gameId));
-}
+    console.log(`Ending game from server for game ID: ${gameId}`);
+  
+    try {
+      const result = await db
+        .update(gameTable)
+        .set({ ended: true })
+        .where(eq(gameTable.id, gameId));
+  
+      console.log("Database update result:", result);
+      return { success: true };
+    } catch (error: any) {
+      console.error("Error updating gameTable:", error);
+      return { success: false, error: error.message };
+    }
+  };

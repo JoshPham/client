@@ -5,6 +5,8 @@ export const items = [
         price: 470,
         difficulty: "Medium",
         image: "/items/gucci-flip-flops.png",
+        width: 1200,
+        height: 1200,
     },
     {
         id: "2",
@@ -12,6 +14,8 @@ export const items = [
         price: 675,
         difficulty: "Medium",
         image: "/items/gucci-bucket-hat.png",
+        width: 1200,
+        height: 1200,
     },
     {
         id: "3",
@@ -19,6 +23,8 @@ export const items = [
         price: 1895,
         difficulty: "Hard",
         image: "/items/moncler-puffer-jacket.png",
+        width: 1024,
+        height: 1536,
     },
     {
         id: "4",
@@ -26,6 +32,8 @@ export const items = [
         price: 530,
         difficulty: "Medium",
         image: "/items/gucci-gg-belt.png",
+        width: 1200,
+        height: 1200,
     },
     {
         id: "5",
@@ -33,6 +41,8 @@ export const items = [
         price: 100,
         difficulty: "Easy",
         image: "/items/nike-air-force-1.png",
+        width: 1728,
+        height: 2160,
     },
     {
         id: "6",
@@ -40,152 +50,196 @@ export const items = [
         price: 100,
         difficulty: "Medium",
         image: "/items/nike-tech.png",
+        width: 852,
+        height: 852,
     },
     {
         id: "7",
         name: "Burberry Trench Coat",
         price: 2890,
         difficulty: "Hard",
-        image: "/items/burberry-trench-coat.png"
+        image: "/items/burberry-trench-coat.png",
+        width: 2500,
+        height: 2500,
     },
     {
         id: "8",
         name: "Balenciaga Triple S Sneakers",
         price: 1250,
         difficulty: "Medium",
-        image: "/items/balenciaga-triple-s-sneakers.png"
+        image: "/items/balenciaga-triple-s-sneakers.png",
+        width: 2200,
+        height: 2200,
     },
     {
         id: "9",
         name: "Acne Studios Loose-Fit Jeans",
         price: 580,
         difficulty: "Medium",
-        image: "/items/acne-studios-jeans.png"
+        image: "/items/acne-studios-jeans.png",
+        width: 1000,
+        height: 1335,
     },
     {
         id: "10",
         name: "Essentials T-Shirt",
         price: 81,
         difficulty: "Easy",
-        image: "/items/essentials-t-shirt.png"
+        image: "/items/essentials-t-shirt.png",
+        width: 1000,
+        height: 1334,
     },
     {
         id: "11",
         name: "Essentials Hoodie",
         price: 120,
         difficulty: "Easy",
-        image: "/items/essentials-hoodie.png"
+        image: "/items/essentials-hoodie.png",
+        width: 1900,
+        height: 2536,
     },
     {
         id: "12",
         name: "Essentials Sweatpants",
         price: 186,
         difficulty: "Easy",
-        image: "/items/essentials-sweatpants.png"
+        image: "/items/essentials-sweatpants.png",
+        width: 2048,
+        height: 2048,
     },
     {
         id: "13",
         name: "Hermés Blanket",
         price: 1925,
         difficulty: "Hard",
-        image: "/items/hermés-blanket.png"
+        image: "/items/hermés-blanket.png",
+        width: 800,
+        height: 800,
     },
     {
         id: "14",
         name: "Louis Vuitton Bag",
         price: 2460,
         difficulty: "Hard",
-        image: "/items/louis-vuitton-bag.png"
+        image: "/items/louis-vuitton-bag.png",
+        width: 1440,
+        height: 1440,
     },
     {
         id: "15",
         name: "Aditya's Wallet",
         price: 500,
         difficulty: "Medium",
-        image: "/items/gucci-snake-wallet.png"
+        image: "/items/gucci-snake-wallet.png",
+        width: 1200,
+        height: 1200,
     },
     {
         id: "16",
         name: "BMW M3 Competition",
         price: 800,
         difficulty: "Medium",
-        image: "/items/bmw-328i.png"
+        image: "/items/bmw-328i.png",
+        width: 603,
+        height: 1304,
     },
-    // {
-    //     id: "17",
-    //     name: "30 Year Old Man",
-    //     price: 100000000,
-    //     difficulty: "Very Hard",
-    //     image: "/items/30-year-old-man.png"
-    // },
+    {
+        id: "17",
+        name: "30 Year Old Man",
+        price: 100000000,
+        difficulty: "Very Hard",
+        image: "/items/30-year-old-man.png",
+        width: 768,
+        height: 1024,
+    },
     {
         id: "19",
         name: "Shaq Shoes",
         price: 70,
         difficulty: "Easy",
-        image: "/items/shaq-shoes.png"
+        image: "/items/shaq-shoes.png",
+        width: 1600,
+        height: 1600,
     },
     {
         id: "20",
         name: "Minecraft Shirt",
         price: 20,
         difficulty: "Easy",
-        image: "/items/minecraft-shirt.png"
+        image: "/items/minecraft-shirt.png",
+        width: 1000,
+        height: 1000,
     },
     {
         id: "21",
         name: "Roblox Shirt",
         price: 20,
         difficulty: "Easy",
-        image: "/items/roblox-shirt.png"
+        image: "/items/roblox-shirt.png",
+        width: 779,
+        height: 809,
     },
     {
         id: "22",
         name: "Fortnite Shirt",
         price: 40,
         difficulty: "Easy",
-        image: "/items/fortnite-shirt.png"
+        image: "/items/fortnite-shirt.png",
+        width: 600,
+        height: 600,
     },
     {
         id: "23",
         name: "Rizz Shirt",
         price: 50,
         difficulty: "Easy",
-        image: "/items/rizz-shirt.png"
+        image: "/items/rizz-shirt.png",
+        width: 984,
+        height: 1000,
     },
     {
         id: "24",
         name: "Homie Shirt",
         price: 30,
         difficulty: "Easy",
-        image: "/items/homiesexual-shirt.png"
+        image: "/items/homiesexual-shirt.png",
+        width: 600,
+        height: 600,
     },
     {
         id: "25",
         name: "Nice Poster",
         price: 10,
         difficulty: "Easy",
-        image: "/items/nice-poster.png"
+        image: "/items/nice-poster.png",
+        width: 600,
+        height: 600,
     },
     {
         id: "26",
         name: "Dequavious Pork Shirt",
         price: 20,
         difficulty: "Medium",
-        image: "/items/dequavious-pork-shirt.png"
+        image: "/items/dequavious-pork-shirt.png",
+        width: 590,
+        height: 600,
     },
     {
         id: "27",
         name: "Suitcase",
         price: 50,
         difficulty: "Easy",
-        image: "/items/suitcase.png"
+        image: "/items/suitcase.png",
+        width: 768,
+        height: 1024,
     },
     {
         id: "28",
         name: "Respect My Authority Shirt",
         price: 30,
         difficulty: "Easy",
-        image: "/items/respect-my-authority-shirt.png"
+        image: "/items/respect-my-authority-shirt.png",
+        width: 1500,
+        height: 2000,
     }
 ]

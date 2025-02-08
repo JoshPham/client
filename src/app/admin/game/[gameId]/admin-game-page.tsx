@@ -73,6 +73,7 @@ export function AdminClient({
                 setTime(time);
                 if (time === 0) {
                     socket.emit("stop");
+                    setGameEnded(gameId)
                 }
             }
         })

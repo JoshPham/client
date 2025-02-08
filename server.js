@@ -1,10 +1,10 @@
-import { createServer } from "node:http"; // Change from "node:https" to "node:http"
+import { createServer } from "node:http";
 import next from "next";
 import { Server } from "socket.io";
 
 const dev = process.env.NODE_ENV !== "production";
-const hostname = "localhost";  // Change from "materialism-and-happiness.org" to "localhost"
-const port = 3000;  // Keep it as 3000, but remove HTTPS setup
+const hostname = "localhost";
+const port = 3000;
 
 const app = next({ dev, hostname, port });
 const handler = app.getRequestHandler();
@@ -12,7 +12,7 @@ const handler = app.getRequestHandler();
 let timeouts = [];
 
 app.prepare().then(() => {
-    const httpServer = createServer(handler); // No SSL here
+    const httpServer = createServer(handler);
     const io = new Server(httpServer, {
         cors: {
             origin: dev ? "http://localhost:3000" : "https://materialism-and-happiness.org",
@@ -65,6 +65,6 @@ app.prepare().then(() => {
     });
 
     httpServer.listen(port, () => {
-        console.log(`> Ready on http://${hostname}:${port}`);  // No HTTPS here
+        console.log(`> Ready on http://${hostname}:${port}`);
     });
 });
