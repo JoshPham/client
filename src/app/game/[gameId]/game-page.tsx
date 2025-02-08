@@ -19,7 +19,6 @@ import BoxPic from "@/images/box.png";
 import { items } from "./items";
 import { triviaQuestions } from "./questions";
 import Link from "next/link";
-import { setGameEnded } from "@/app/admin/game/[gameId]/actions";
 
 interface ItemProps {
     id: string
@@ -80,7 +79,7 @@ export default function GamePage({
         if (session) {
             setShowConfirmation(true)
         }
-    })
+    }, [session])
 
     useEffect(() => {
         if (timer <= 0) {

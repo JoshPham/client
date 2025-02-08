@@ -25,9 +25,7 @@ export const setGameEnded = async (gameId: string) => {
         .where(eq(gameTable.id, gameId));
   
       console.log("Database update result:", result);
-      return { success: true };
-    } catch (error: any) {
+    } catch (error) {
       console.error("Error updating gameTable:", error);
-      return { success: false, error: error.message };
     }
   };
