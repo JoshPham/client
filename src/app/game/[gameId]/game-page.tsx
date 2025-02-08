@@ -74,6 +74,7 @@ export default function GamePage({
     const [correct, setCorrect] = useState<boolean>(false);
     const [session, setSession] = useState<PlayerSession | undefined>(playerSession);
     const [gameOver, setGameOver] = useState<boolean>(false);
+    const [isAnswerDisabled, setIsAnswerDisabled] = useState(false);
 
     useEffect(() => {
         if (session) {
@@ -223,9 +224,12 @@ export default function GamePage({
             setQuestion(randomQuestion);
             setIsSubFading(false);
         }, 1000);
-    }
+    };
 
     const chooseAnswer = (question: QuestionProps, answer: string) => {
+        if (isAnswerDisabled) return;
+        setIsAnswerDisabled(true);
+
         if (answer === question.correct_answer && session) {
             socket?.emit("addPoints", session!.deviceId!, (session!.score || 0), item!.price, item!.name, session!.name);
             
@@ -244,7 +248,12 @@ export default function GamePage({
                 setIsSubFading(false);
             }, 1000);
         }
-    }
+
+        setTimeout(() => {
+            setIsAnswerDisabled(false);
+        }, 1000);
+    };
+
 
     if (gameOver && session) {
         return (

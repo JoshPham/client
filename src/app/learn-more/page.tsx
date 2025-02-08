@@ -25,7 +25,7 @@ export default function LearnMorePage() {
                         What did you just witness?
                     </h1>
                     <p className="text-xl md:text-4xl text-[#00C853] block">
-                        You just experienced the idea of <span className="text-[#03DAC6] font-bold">Materialism</span> an ideology that favors material possessions over spiritual values.
+                        You just experienced the idea of <span className="text-[#03DAC6] font-bold">Materialism</span>, an ideology that favors material possessions over spiritual values.
                         <br />
                         <br />
                         Regardless of how positive or negative we felt, all of these feelings caused by this game can fall under the influence of materialism.

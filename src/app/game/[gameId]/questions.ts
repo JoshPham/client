@@ -385,4 +385,356 @@ export const triviaQuestions = [
         difficulty: "Medium",
         correct_answer: "Leonardo da Vinci"
     },
+    {
+        question: "What is the largest mammal in the world?",
+        answers: [
+            "Blue Whale",
+            "Elephant",
+            "Giraffe",
+            "Hippopotamus",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Blue Whale",
+    },
+    {
+        question: "Which animal is known as the 'King of the Jungle'?",
+        answers: [
+            "Lion",
+            "Tiger",
+            "Elephant",
+            "Bear",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Lion"
+    },
+    {
+        question: "What is 5 + 5?",
+        answers: [
+            "10",
+            "12",
+            "15",
+            "20",
+        ],
+        difficulty: "Easy",
+        correct_answer: "10"
+    },
+    {
+        question: "Which planet is closest to the Sun?",
+        answers: [
+            "Mercury",
+            "Venus",
+            "Earth",
+            "Mars",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Mercury"
+    },
+    {
+        question: "What is the color of an emerald?",
+        answers: [
+            "Green",
+            "Blue",
+            "Red",
+            "Purple",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Green"
+    },
+    {
+        question: "What is the opposite of 'cold'?",
+        answers: [
+            "Hot",
+            "Warm",
+            "Cool",
+            "Ice",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Hot"
+    },
+    {
+        question: "How many fingers do humans have on one hand?",
+        answers: [
+            "5",
+            "4",
+            "6",
+            "3",
+        ],
+        difficulty: "Easy",
+        correct_answer: "5"
+    },
+    {
+        question: "What do bees produce?",
+        answers: [
+            "Honey",
+            "Milk",
+            "Juice",
+            "Sugar",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Honey"
+    },
+    {
+        question: "What does a thermometer measure?",
+        answers: [
+            "Temperature",
+            "Speed",
+            "Weight",
+            "Height",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Temperature"
+    },
+    {
+        question: "Which day comes after Monday?",
+        answers: [
+            "Tuesday",
+            "Wednesday",
+            "Sunday",
+            "Friday",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Tuesday"
+    },
+    {
+        question: "What is the main ingredient in a salad?",
+        answers: [
+            "Lettuce",
+            "Rice",
+            "Cheese",
+            "Bread",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Lettuce"
+    },
+    {
+        question: "What is the capital of the United States?",
+        answers: [
+            "Washington, D.C.",
+            "New York",
+            "Los Angeles",
+            "Chicago",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Washington, D.C."
+    },
+    {
+        question: "What is 100 divided by 10?",
+        answers: [
+            "10",
+            "5",
+            "20",
+            "50",
+        ],
+        difficulty: "Easy",
+        correct_answer: "10"
+    },
+    {
+        question: "Which of these animals can fly?",
+        answers: [
+            "Eagle",
+            "Dolphin",
+            "Elephant",
+            "Shark",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Eagle"
+    },
+    {
+        question: "Which of these is a dairy product?",
+        answers: [
+            "Cheese",
+            "Rice",
+            "Carrot",
+            "Chicken",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Cheese"
+    },
+    {
+        question: "Which shape has three sides?",
+        answers: [
+            "Triangle",
+            "Square",
+            "Rectangle",
+            "Pentagon",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Triangle"
+    },
+    {
+        question: "Which animal is known for its black and white stripes?",
+        answers: [
+            "Zebra",
+            "Tiger",
+            "Cow",
+            "Panda",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Zebra"
+    },
+    {
+        question: "What does a caterpillar turn into?",
+        answers: [
+            "Butterfly",
+            "Bee",
+            "Dragonfly",
+            "Spider",
+        ],
+        difficulty: "Easy",
+        correct_answer: "Butterfly"
+    },
+    {
+        question: "How many wheels does a bicycle have?",
+        answers: [
+            "2",
+            "3",
+            "4",
+            "1",
+        ],
+        difficulty: "Easy",
+        correct_answer: "2"
+    },
+    {
+        question: "How many sides does a square have?",
+        answers: [
+            "4",
+            "3",
+            "5",
+            "6",
+        ],
+        difficulty: "Easy",
+        correct_answer: "4"
+    },
+    {
+        question: "Which planet has the most moons?",
+        answers: [
+            "Saturn",
+            "Jupiter",
+            "Neptune",
+            "Mars",
+        ],
+        difficulty: "Medium",
+        correct_answer: "Saturn"
+    },
+    {
+        question: "What is the chemical symbol for sodium?",
+        answers: [
+            "Na",
+            "So",
+            "Sn",
+            "Sa",
+        ],
+        difficulty: "Medium",
+        correct_answer: "Na"
+    },
+    {
+        question: "Which country gifted the Statue of Liberty to the United States?",
+        answers: [
+            "France",
+            "United Kingdom",
+            "Germany",
+            "Italy",
+        ],
+        difficulty: "Medium",
+        correct_answer: "France"
+    },
+    {
+        question: "Which gas is responsible for the greenhouse effect the most?",
+        answers: [
+            "Carbon Dioxide",
+            "Methane",
+            "Oxygen",
+            "Nitrogen",
+        ],
+        difficulty: "Medium",
+        correct_answer: "Carbon Dioxide"
+    },
+    {
+        question: "Who discovered penicillin?",
+        answers: [
+            "Alexander Fleming",
+            "Marie Curie",
+            "Louis Pasteur",
+            "Isaac Newton",
+        ],
+        difficulty: "Medium",
+        correct_answer: "Alexander Fleming"
+    },
+    {
+        question: "Which layer of the Earth's atmosphere contains the ozone layer?",
+        answers: [
+            "Stratosphere",
+            "Troposphere",
+            "Mesosphere",
+            "Thermosphere",
+        ],
+        difficulty: "Hard",
+        correct_answer: "Stratosphere"
+    },
+    {
+        question: "What is the only metal that is liquid at room temperature?",
+        answers: [
+            "Mercury",
+            "Gallium",
+            "Cesium",
+            "Bromine",
+        ],
+        difficulty: "Hard",
+        correct_answer: "Mercury"
+    },
+    {
+        question: "Which ancient civilization built the city of Machu Picchu?",
+        answers: [
+            "Inca",
+            "Maya",
+            "Aztec",
+            "Olmec",
+        ],
+        difficulty: "Hard",
+        correct_answer: "Inca"
+    },
+    {
+        question: "What is the term for an animal that can live both in water and on land?",
+        answers: [
+            "Amphibian",
+            "Reptile",
+            "Mammal",
+            "Crustacean",
+        ],
+        difficulty: "Hard",
+        correct_answer: "Amphibian"
+    },
+    {
+        question: "Who is the first U.S. president to serve two non-consecutive terms?",
+        answers: [
+            "Grover Cleveland",
+            "Theodore Roosevelt",
+            "Andrew Jackson",
+            "Woodrow Wilson",
+        ],
+        difficulty: "Hard",
+        correct_answer: "Grover Cleveland"
+    },
+    {
+        question: "Which gas is most abundant in Earth’s atmosphere?",
+        answers: [
+            "Nitrogen",
+            "Oxygen",
+            "Carbon Dioxide",
+            "Argon",
+        ],
+        difficulty: "Hard",
+        correct_answer: "Nitrogen"
+    },
+    {
+        question: "What was the first artificial satellite to orbit Earth?",
+        answers: [
+            "Sputnik 1",
+            "Explorer 1",
+            "Voyager 1",
+            "Luna 2",
+        ],
+        difficulty: "Hard",
+        correct_answer: "Sputnik 1"
+    },
 ];
